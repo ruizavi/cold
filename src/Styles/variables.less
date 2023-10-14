@@ -1,0 +1,15 @@
+@import "./colors.less";
+
+@spectrum: pink, orange, deep, red, blue, yellow, green, purple;
+
+:root {
+  each(@spectrum, .(@color){
+      @color-name: @color;
+      --plsm-@{color-name}-5: ~"@{@{color-name}-5}";
+    
+      each(range(9), {
+        @level: @index * 10;
+        --plsm-@{color-name}-@{level}: ~"@{@{color-name}-@{level}}";
+      });
+    });
+}
