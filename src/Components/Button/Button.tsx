@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import useClass from '../../Utils/useClass';
 import { COLORS, SIZES } from '../../Utils/const';
 import { AsProps } from '../../Utils/interfaces';
-
+import './Button.less';
 export interface ButtonProps extends AsProps<'button'>, React.HTMLAttributes<HTMLElement> {
    appearence?: 'solid' | 'bordered' | 'link';
    color?: COLORS;

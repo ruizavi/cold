@@ -1,0 +1,120 @@
+@import '../../Styles/main.less';
+
+.plsm-btn {
+   display: inline-flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+   color: white;
+   border-radius: 0.25rem;
+}
+
+.plsm-btn-block {
+   display: block;
+   width: 100%;
+}
+
+.plsm-btn-solid {
+   border: none;
+   background-color: var(--plsm-btn-solid-bg);
+   color: white;
+
+   &.plsm-btn-disabled {
+      opacity: 0.3;
+   }
+
+   &.plsm-btn-actived {
+      background-color: var(--plsm-btn-solid-active-bg);
+   }
+
+   &:hover {
+      background-color: var(--plsm-btn-solid-hover-bg);
+   }
+}
+
+.plsm-btn-bordered {
+   color: var(--plsm-btn-bordered-text);
+   background: none;
+   border: 1px solid var(--plsm-btn-bordered-border);
+
+   &:hover {
+      border: 1px solid var(--plsm-btn-bordered-hover-border);
+      color: var(--plsm-btn-bordered-hover-text);
+   }
+
+   &.plsm-btn-actived {
+      border: 1px solid var(--plsm-btn-bordered-active-border);
+      color: var(--plsm-btn-bordered-active-text);
+   }
+
+   &.plsm-btn-disabled {
+      opacity: 0.5;
+   }
+}
+
+.plsm-btn-link {
+   color: var(--plsm-btn-link-text);
+   border: none;
+   background: none;
+   font-weight: bold;
+
+   &:hover {
+      color: var(--plsm-btn-link-hover-text);
+   }
+
+   &.plsm-btn-actived {
+      color: var(--plsm-btn-link-active-text);
+   }
+
+   &.plsm-btn-disabled {
+      opacity: 0.5;
+   }
+}
+
+each(@spectrum, .(@color){
+  @C20: var(~'--plsm-@{color}-20');
+  @C30: var(~'--plsm-@{color}-30');
+  @C40: var(~'--plsm-@{color}-40');
+  @C50: var(~'--plsm-@{color}-50');
+  @C60: var(~'--plsm-@{color}-60');
+  @C70: var(~'--plsm-@{color}-70');
+  @C80: var(~'--plsm-@{color}-80');
+  @C90: var(~'--plsm-@{color}-90');
+
+  .plsm-btn-@{color} {
+    --plsm-btn-solid-bg: @C50;
+    --plsm-btn-solid-hover-bg: @C70;
+    --plsm-btn-solid-active-bg: @C80;
+
+    --plsm-btn-bordered-border: @C50;
+    --plsm-btn-bordered-text: @C50;
+    --plsm-btn-bordered-hover-border: @C90;
+    --plsm-btn-bordered-hover-text: @C80;
+    --plsm-btn-bordered-active-border: @C90;
+    --plsm-btn-bordered-active-text: @C90;
+
+    --plsm-btn-link-text: @C50;
+    --plsm-btn-link-hover-text: @C80;
+    --plsm-btn-link-active-text: @C90;
+  }
+});
+
+.plsm-btn-xs {
+   padding: 0.25rem 0.5rem;
+   font-size: 0.9rem;
+}
+
+.plsm-btn-sm {
+   padding: 0.375rem 0.75rem;
+   font-size: 1rem;
+}
+
+.plsm-btn-md {
+   padding: 0.45rem 1rem;
+   font-size: 1.25rem;
+}
+
+.plsm-btn-lg {
+   padding: 0.5rem 1.25rem;
+   font-size: 1.5rem;
+}
