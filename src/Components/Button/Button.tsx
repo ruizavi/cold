@@ -1,22 +1,12 @@
 import React, { useCallback } from 'react';
 import useClass from '../../Utils/useClass';
-
-export interface GeneralProps {
-   prefix?: string;
-   className?: string;
-   children?: React.ReactNode;
-   style?: React.CSSProperties;
-}
-
-export interface AsProps<As extends React.ElementType | string = React.ElementType>
-   extends GeneralProps {
-   as?: As;
-}
+import { COLORS, SIZES } from '../../Utils/const';
+import { AsProps } from '../../Utils/interfaces';
 
 export interface ButtonProps extends AsProps<'button'>, React.HTMLAttributes<HTMLElement> {
    appearence?: 'solid' | 'bordered' | 'link';
-   color?: 'pink' | 'orange' | 'deep' | 'red' | 'blue' | 'yellow' | 'green' | 'purple';
-   size?: 'xs' | 'sm' | 'md' | 'lg';
+   color?: COLORS;
+   size?: SIZES;
    type?: 'submit' | 'reset' | 'button';
    disabled?: boolean;
    actived?: boolean;
