@@ -35,13 +35,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonPr
 
    const classes = merge(
       className,
-      addClassPrefix(appearence, size, color, { disabled, actived, block })
+      addClassPrefix(appearence, size, color, { disabled, actived, block, isLoading })
    );
 
    const Component = as || 'button';
 
    const renderButton = useCallback(() => {
-      return isLoading ? <span className="plsm-btn-loader"></span> : <>{children}</>;
+      return isLoading ? <span></span> : <>{children}</>;
    }, [appearence, color, size, className, children, actived, block, isLoading, disabled]);
 
    return (

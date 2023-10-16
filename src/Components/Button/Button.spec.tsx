@@ -36,4 +36,14 @@ describe('Button element', () => {
          expect(classes.contains(cls)).toBe(true);
       });
    });
+
+   it('should show a loader in the button', () => {
+      const { getByRole } = render(<Button isLoading>{children}</Button>);
+
+      const loader = getByRole('button');
+
+      const classes = loader.classList;
+
+      expect(classes.contains('plsm-btn-isLoading')).toBe(true);
+   });
 });

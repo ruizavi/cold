@@ -125,16 +125,18 @@ each(@spectrum, .(@color){
 }
 
 // Loader
-.plsm-btn-loader {
-   width: 1rem;
-   aspect-ratio: 1;
-   --c: no-repeat linear-gradient(white 0 0);
-   background:
-      var(--c) 0% 50%,
-      var(--c) 50% 50%,
-      var(--c) 100% 50%;
-   background-size: 20% 100%;
-   animation: l1 1s infinite linear;
+.plsm-btn-isLoading {
+   & > span {
+      width: 1rem;
+      aspect-ratio: 1;
+      --c: no-repeat linear-gradient(white 0 0);
+      background:
+         var(--c) 0% 50%,
+         var(--c) 50% 50%,
+         var(--c) 100% 50%;
+      background-size: 20% 100%;
+      animation: l1 1s infinite linear;
+   }
 }
 @keyframes l1 {
    0% {
