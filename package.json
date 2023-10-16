@@ -2,7 +2,7 @@
    "name": "cold-plasma",
    "version": "1.0.1",
    "type": "module",
-   "main": "dist/cold-plasma.js",
+   "main": "dist/cold-plasma.umd.js",
    "module": "dist/cold-plasma.js",
    "author": "Victor Ruiz (ruizavi)",
    "description": "A simple library of components",
@@ -11,7 +11,7 @@
       "registry": "https://registry.npmjs.org/"
    },
    "scripts": {
-      "prepublishOnly": "npm run build",
+      "prepublishOnly": "npm run test && npm run build",
       "prepare": "npm run test && npm run build",
       "dev": "vite",
       "build": "tsc && vite build",
@@ -19,6 +19,9 @@
       "preview": "vite preview",
       "test": "vitest run",
       "coverage": "vitest run --coverage"
+   },
+   "peerDependencies": {
+      "react": ">=16"
    },
    "dependencies": {
       "classnames": "^2.3.2",
