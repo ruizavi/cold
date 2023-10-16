@@ -1,9 +1,10 @@
 {
    "name": "cold-plasma",
-   "version": "1.0.4",
+   "version": "1.0.5",
    "type": "module",
    "main": "./dist/cold-plasma.umd.cjs",
    "module": "./dist/cold-plasma.js",
+   "types": "./dist/index.d.ts",
    "author": "Victor Ruiz (ruizavi)",
    "description": "A simple library of components",
    "publishConfig": {
@@ -58,6 +59,7 @@
       "prettier": "^3.0.3",
       "typescript": "^5.2.2",
       "vite": "^4.4.5",
+      "vite-plugin-dts": "^3.6.0",
       "vitest": "^0.34.6"
    },
    "repository": {
