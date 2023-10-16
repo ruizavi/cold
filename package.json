@@ -48,10 +48,11 @@
    },
    "repository": {
       "type": "git",
-      "url": "git+https://github.com/ruizavi/cold"
+      "url": "git+https://github.com/ruizavi/cold.git"
    },
    "files": [
-      "dist", "README.md"
+      "dist",
+      "README.md"
    ],
    "keywords": [
       "react",
