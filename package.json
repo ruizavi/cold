@@ -1,9 +1,9 @@
 {
    "name": "cold-plasma",
-   "version": "1.0.0",
+   "version": "1.0.1",
    "type": "module",
-   "main": "dist/cold.js",
-   "module": "dist/cold.js",
+   "main": "dist/cold-plasma.js",
+   "module": "dist/cold-plasma.js",
    "author": "Victor Ruiz (ruizavi)",
    "description": "A simple library of components",
    "publishConfig": {

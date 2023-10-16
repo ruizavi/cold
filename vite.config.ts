@@ -6,8 +6,8 @@ export default defineConfig({
    plugins: [react()],
    build: {
       lib: {
-         entry: 'src/index.ts',
-         name: 'cold'
+         entry: 'src/index.tsx',
+         name: 'cold-plasma'
       }
    },
    test: {
