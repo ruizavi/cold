@@ -1,6 +1,5 @@
 {
    "name": "@plasma/cold",
-   "private": false,
    "version": "1.0.0",
    "type": "module",
    "main": "dist/cold.js",
