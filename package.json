@@ -1,5 +1,5 @@
 {
-   "name": "cold",
+   "name": "cold-plasma",
    "version": "1.0.0",
    "type": "module",
    "main": "dist/cold.js",
