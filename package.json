@@ -51,7 +51,7 @@
       "url": "https://github.com/ruizavi/cold"
    },
    "files": [
-      "dist"
+      "dist", "README.md"
    ],
    "keywords": [
       "react",
