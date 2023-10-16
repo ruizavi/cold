@@ -1,5 +1,6 @@
 @import '../../Styles/main.less';
 
+// Base class
 .plsm-btn {
    display: inline-flex;
    justify-content: center;
@@ -9,11 +10,13 @@
    border-radius: 0.25rem;
 }
 
+// Button block
 .plsm-btn-block {
    display: block;
    width: 100%;
 }
 
+// Appearence
 .plsm-btn-solid {
    border: none;
    background-color: var(--plsm-btn-solid-bg);
@@ -71,6 +74,7 @@
    }
 }
 
+// Colors
 each(@spectrum, .(@color){
   @C20: var(~'--plsm-@{color}-20');
   @C30: var(~'--plsm-@{color}-30');
@@ -99,6 +103,7 @@ each(@spectrum, .(@color){
   }
 });
 
+// Size
 .plsm-btn-xs {
    padding: 0.25rem 0.5rem;
    font-size: 0.9rem;
@@ -117,4 +122,49 @@ each(@spectrum, .(@color){
 .plsm-btn-lg {
    padding: 0.5rem 1.25rem;
    font-size: 1.5rem;
+}
+
+// Loader
+.plsm-btn-loader {
+   width: 1rem;
+   aspect-ratio: 1;
+   --c: no-repeat linear-gradient(white 0 0);
+   background:
+      var(--c) 0% 50%,
+      var(--c) 50% 50%,
+      var(--c) 100% 50%;
+   background-size: 20% 100%;
+   animation: l1 1s infinite linear;
+}
+@keyframes l1 {
+   0% {
+      background-size:
+         20% 100%,
+         20% 100%,
+         20% 100%;
+   }
+   33% {
+      background-size:
+         20% 10%,
+         20% 100%,
+         20% 100%;
+   }
+   50% {
+      background-size:
+         20% 100%,
+         20% 10%,
+         20% 100%;
+   }
+   66% {
+      background-size:
+         20% 100%,
+         20% 100%,
+         20% 10%;
+   }
+   100% {
+      background-size:
+         20% 100%,
+         20% 100%,
+         20% 100%;
+   }
 }

@@ -11,6 +11,7 @@ export interface ButtonProps extends AsProps<'button'>, React.HTMLAttributes<HTM
    disabled?: boolean;
    actived?: boolean;
    block?: boolean;
+   isLoading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonProps, ref) => {
@@ -26,6 +27,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonPr
       disabled,
       actived,
       block,
+      isLoading,
       ...rest
    } = props;
 
@@ -39,8 +41,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonPr
    const Component = as || 'button';
 
    const renderButton = useCallback(() => {
-      return <>{children}</>;
-   }, [appearence, color, size, className, children]);
+      return isLoading ? <span className="plsm-btn-loader"></span> : <>{children}</>;
+   }, [appearence, color, size, className, children, actived, block, isLoading, disabled]);
 
    return (
       <Component {...rest} type={type} ref={ref} className={classes} disabled={disabled}>
