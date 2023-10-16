@@ -6,6 +6,7 @@
    "main": "dist/cold.js",
    "module": "dist/cold.js",
    "author": "Victor Ruiz (ruizavi)",
+   "description": "A simple library of components",
    "scripts": {
       "prepublishOnly": "npm run build",
       "prepare": "npm run test && npm run build",
@@ -48,5 +49,14 @@
    "repository": {
       "type": "git",
       "url": "https://github.com/ruizavi/cold"
-   }
+   },
+   "files": [
+      "dist"
+   ],
+   "keywords": [
+      "react",
+      "typescript",
+      "components",
+      "simple"
+   ]
 }
