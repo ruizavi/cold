@@ -25,8 +25,6 @@ import 'cold-plasma/dist/style.css';
 
 ### Button Component
 
-For this moment, exist Button component, import as
-
 ```js
 import { Button } from 'cold-plasma';
 ```
@@ -48,6 +46,26 @@ The `Button` component supports the following properties:
 -  `block?: boolean` (optional): If set to `true`, the button will take up the full width of its container.
 
 -  `isLoading?: boolean` (optional): If set to `true`, the button will indicate that it's in a loading state.
+
+### Loader Component
+
+```js
+import { Loader } from 'cold-plasma';
+```
+
+The `Loader` component is used to display loading indicators or spinners in your application. It provides the following customizable properties:
+
+-  `speed?: 'slow' | 'normal' | 'fast'` (optional): Sets the speed of the loader animation. You can choose between 'slow,' 'normal,' or 'fast.'
+
+-  `size?: SIZES` (optional): Specifies the size of the loader. Choose from the available size options: 'xs,' 'sm,' 'md,' or 'lg.'
+
+-  `center?: boolean` (optional): If set to `true`, the loader will be centered within its container.
+
+-  `message?: string` (optional): Allows you to include an optional message or text alongside the loader to provide context.
+
+-  `type?: 'bars' | 'spinner' | 'dots' | 'flip' | 'lines'` (optional): Determines the visual style of the loader. You can select from various predefined types, including 'bars,' 'spinner,' 'dots,' 'flip,' or 'lines.'
+
+-  `color?: COLORS` (optional): Specifies the color of the loader. You can choose from predefined color constants: 'pink,' 'orange,' 'deep,' 'red,' 'blue,' 'yellow,' 'green,' or 'purple.'
 
 #### Constants
 
@@ -74,4 +92,5 @@ We welcome contributions and appreciate your help in making this project better.
 
 ## Changelog
 
-- v.1.0.x - Add button component, try upload to npm
+-  v.1.0.x - Add button component, try upload to npm
+-  v.1.1.x - Add loader component, add propTypes to button and write README.md

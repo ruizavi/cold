@@ -1,6 +1,7 @@
 pnpm-lock.yaml
 coverage
 index.html
+
 # Logs
 logs
 *.log
