@@ -1,6 +1,6 @@
 {
    "name": "cold-plasma",
-   "version": "1.1.1",
+   "version": "1.1.2",
    "type": "module",
    "main": "./dist/cold-plasma.umd.cjs",
    "module": "./dist/cold-plasma.js",
@@ -34,13 +34,14 @@
       "react-dom": ">=16"
    },
    "dependencies": {
+      "@types/prop-types": "^15.7.8",
       "classnames": "^2.3.2",
+      "prop-types": "^15.8.1",
       "react": "^18.2.0",
       "react-dom": "^18.2.0"
    },
    "devDependencies": {
       "@testing-library/react": "^14.0.0",
-      "@types/prop-types": "^15.7.8",
       "@types/react": "^18.2.15",
       "@types/react-dom": "^18.2.7",
       "@typescript-eslint/eslint-plugin": "^6.7.5",
@@ -59,7 +60,6 @@
       "happy-dom": "^12.9.1",
       "less": "^4.2.0",
       "prettier": "^3.0.3",
-      "prop-types": "^15.8.1",
       "typescript": "^5.2.2",
       "vite": "^4.4.5",
       "vite-plugin-dts": "^3.6.0",
