@@ -94,3 +94,4 @@ We welcome contributions and appreciate your help in making this project better.
 
 -  v.1.0.x - Add button component, try upload to npm
 -  v.1.1.x - Add loader component, add propTypes to button and write README.md
+    -  v.1.1.1 - Fix Loader type dots, require display:block for visualize
