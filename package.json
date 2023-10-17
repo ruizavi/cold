@@ -18,6 +18,7 @@
       "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
       "preview": "vite preview",
       "test": "vitest run",
+      "wtest": "vitest",
       "coverage": "vitest run --coverage"
    },
    "exports": {
@@ -39,6 +40,7 @@
    },
    "devDependencies": {
       "@testing-library/react": "^14.0.0",
+      "@types/prop-types": "^15.7.8",
       "@types/react": "^18.2.15",
       "@types/react-dom": "^18.2.7",
       "@typescript-eslint/eslint-plugin": "^6.7.5",
@@ -57,6 +59,7 @@
       "happy-dom": "^12.9.1",
       "less": "^4.2.0",
       "prettier": "^3.0.3",
+      "prop-types": "^15.8.1",
       "typescript": "^5.2.2",
       "vite": "^4.4.5",
       "vite-plugin-dts": "^3.6.0",
