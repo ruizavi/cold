@@ -2,6 +2,8 @@ import React, { useCallback } from 'react';
 import useClass from '../../Utils/useClass';
 import { COLORS, SIZES } from '../../Utils/const';
 import { AsProps } from '../../Utils/interfaces';
+import propTypes from 'prop-types';
+
 import './Button.less';
 export interface ButtonProps extends AsProps<'button'>, React.HTMLAttributes<HTMLElement> {
    appearence?: 'solid' | 'bordered' | 'link';
@@ -28,6 +30,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonPr
       actived,
       block,
       isLoading,
+      role = 'button',
       ...rest
    } = props;
 
@@ -45,10 +48,30 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props: ButtonPr
    }, [appearence, color, size, className, children, actived, block, isLoading, disabled]);
 
    return (
-      <Component {...rest} type={type} ref={ref} className={classes} disabled={disabled}>
+      <Component
+         {...rest}
+         type={type}
+         ref={ref}
+         className={classes}
+         disabled={disabled}
+         role={role}
+      >
          {renderButton()}
       </Component>
    );
 });
+
+Button.displayName = 'Button';
+Button.propTypes = {
+   appearence: propTypes.oneOf(['solid', 'bordered', 'link']),
+   color: propTypes.oneOf(['pink', 'orange', 'deep', 'red', 'blue', 'yellow', 'green', 'purple']),
+   size: propTypes.oneOf(['xs', 'sm', 'md', 'lg']),
+   type: propTypes.oneOf(['submit', 'reset', 'button']),
+   disabled: propTypes.bool,
+   actived: propTypes.bool,
+   block: propTypes.bool,
+   isLoading: propTypes.bool,
+   children: propTypes.node
+};
 
 export default Button;

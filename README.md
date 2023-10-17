@@ -23,7 +23,7 @@ First, in main file import styles
 import 'cold-plasma/dist/style.css';
 ```
 
-### Button Component 
+### Button Component
 
 For this moment, exist Button component, import as
 
@@ -71,3 +71,7 @@ If you'd like to contribute to this project, please follow these steps:
 6. Create a pull request in this repository.
 
 We welcome contributions and appreciate your help in making this project better.
+
+## Changelog
+
+- v.1.0.x - Add button component, try upload to npm

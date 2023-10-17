@@ -5,7 +5,7 @@ export interface GeneralProps {
    style?: React.CSSProperties;
 }
 
-export interface AsProps<As extends React.ElementType | string = React.ElementType>
+export interface AsProps<As extends React.ElementType | string = keyof React.ElementType>
    extends GeneralProps {
    as?: As;
 }
