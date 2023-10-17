@@ -1,0 +1,324 @@
+@import '../../Styles/main.less';
+
+.plsm-loader {
+   display: inline-block;
+   span {
+      margin: 0 8px;
+   }
+}
+
+.plsm-loader-center {
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+// Sizes
+.plsm-loader-xs {
+   --HEIGHT: 16px;
+   --WIDTH: 16px;
+}
+
+.plsm-loader-sm {
+   --HEIGHT: 22px;
+   --WIDTH: 22px;
+}
+
+.plsm-loader-md {
+   --HEIGHT: 28px;
+   --WIDTH: 28px;
+}
+
+.plsm-loader-lg {
+   --HEIGHT: 34px;
+   --WIDTH: 34px;
+}
+
+// Velocity
+.plsm-loader-slow {
+   --DURATION: 1.25s;
+}
+
+.plsm-loader-normal {
+   --DURATION: 1s;
+}
+
+.plsm-loader-fast {
+   --DURATION: 0.75s;
+}
+
+// Colors
+each(@spectrum, .(@color){
+    @C20: var(~'--plsm-@{color}-20');
+    @C30: var(~'--plsm-@{color}-30');
+    @C40: var(~'--plsm-@{color}-40');
+    @C50: var(~'--plsm-@{color}-50');
+    @C60: var(~'--plsm-@{color}-60');
+    @C70: var(~'--plsm-@{color}-70');
+    @C80: var(~'--plsm-@{color}-80');
+    @C90: var(~'--plsm-@{color}-90');
+  
+    .plsm-loader-@{color} {
+      --plsm-loader-color-primary: @C50;
+      --plsm-loader-color-secundary: @C70;
+      --plsm-loader-color-terciary: @C80;
+    }
+  });
+
+// Types
+.plsm-loader-bars {
+   span {
+      height: var(--HEIGHT);
+      width: var(--WIDTH);
+      display: block;
+      aspect-ratio: 1;
+      --bars: no-repeat linear-gradient(var(--plsm-loader-color-primary) 0 0);
+      background:
+         var(--bars) 0% 50%,
+         var(--bars) 50% 50%,
+         var(--bars) 100% 50%;
+      background-size: 20% 100%;
+      animation: bars var(--DURATION) infinite linear;
+   }
+}
+
+.plsm-loader-dots {
+   span {
+      width: var(--WIDTH);
+      aspect-ratio: 4;
+      background: radial-gradient(circle closest-side, var(--plsm-loader-color-primary) 90%, #0000)
+         0 / calc(100% / 3) 100% space;
+      clip-path: inset(0 100% 0 0);
+      animation: dots 1s steps(4) infinite;
+   }
+}
+
+.plsm-loader-flip {
+   span {
+      width: var(--WIDTH);
+      aspect-ratio: 1;
+      display: grid;
+      grid: 50%/50%;
+      color: var(--plsm-loader-color-primary);
+      --_g: no-repeat linear-gradient(currentColor 0 0);
+      background: var(--_g), var(--_g), var(--_g);
+      background-size: 50.1% 50.1%;
+      animation:
+         flip-1 var(--DURATION) infinite steps(1) alternate,
+         flip-1-1 calc(var(--DURATION) + var(--DURATION)) infinite steps(1);
+
+      &::before {
+         content: '';
+         background: currentColor;
+         transform: perspective(150px) rotateY(0deg) rotateX(0deg);
+         transform-origin: bottom right;
+         animation: flip-2 var(--DURATION) infinite linear alternate;
+      }
+   }
+}
+
+.plsm-loader-lines {
+   span {
+      width: var(--WIDTH);
+      height: 16px;
+      display: grid;
+
+      &::after,
+      &::before {
+         content: '';
+         grid-area: 1/1;
+         --lines: no-repeat linear-gradient(#046d8b 0 0);
+         background: var(--lines), var(--lines), var(--lines);
+         animation:
+            lines-1 calc(var(--DURATION) + var(--DURATION)) infinite linear,
+            lines-2 calc(var(--DURATION) + var(--DURATION)) infinite linear;
+         transform: scale(var(--s, 1)) translate(3px, -3px);
+      }
+
+      &::after {
+         --s: -1;
+      }
+   }
+}
+
+/* HTML: <div class="loader"></div> */
+.plsm-loader-spinner {
+   span {
+      width: var(--WIDTH);
+      aspect-ratio: 1;
+      display: grid;
+      border: 2px solid white;
+      border-radius: 50%;
+      border-right-color: var(--plsm-loader-color-terciary);
+      animation: spinner 1s infinite linear;
+      &::after,
+      &::before {
+         content: '';
+         grid-area: 1/1;
+         margin: 2px;
+         border: inherit;
+         border-radius: 50%;
+         animation: spinner 2s infinite;
+      }
+
+      &::after {
+         margin: 2px;
+         animation-duration: 3s;
+      }
+   }
+}
+
+@keyframes spinner {
+   100% {
+      transform: rotate(1turn);
+   }
+}
+
+@keyframes lines-1 {
+   0%,
+   3% {
+      background-size:
+         0 4px,
+         4px 0,
+         0 4px;
+   }
+   16.67% {
+      background-size:
+         100% 4px,
+         4px 0,
+         0 4px;
+   }
+   33.33% {
+      background-size:
+         100% 4px,
+         4px 100%,
+         0 4px;
+   }
+   46%,
+   54% {
+      background-size:
+         100% 4px,
+         4px 100%,
+         100% 4px;
+   }
+   66.67% {
+      background-size:
+         0 4px,
+         4px 100%,
+         100% 4px;
+   }
+   83.33% {
+      background-size:
+         0 4px,
+         4px 0,
+         100% 4px;
+   }
+   96%,
+   100% {
+      background-size:
+         0 4px,
+         4px 0,
+         0 4px;
+   }
+}
+@keyframes lines-2 {
+   0%,
+   49.9% {
+      background-position:
+         0 0,
+         100% 0,
+         100% 100%;
+   }
+   50%,
+   100% {
+      background-position:
+         100% 0,
+         100% 100%,
+         0 100%;
+   }
+}
+
+@keyframes flip-1 {
+   0% {
+      background-position:
+         0 100%,
+         100% 100%,
+         100% 0;
+   }
+   33% {
+      background-position:
+         100% 100%,
+         100% 100%,
+         100% 0;
+   }
+   66% {
+      background-position:
+         100% 0,
+         100% 0,
+         100% 0;
+   }
+}
+@keyframes flip-1-1 {
+   0% {
+      transform: scaleX(1) rotate(0deg);
+   }
+   50% {
+      transform: scaleX(-1) rotate(-90deg);
+   }
+}
+@keyframes flip-2 {
+   16.5% {
+      transform: perspective(150px) rotateX(-90deg) rotateY(0deg) rotateX(0deg);
+      filter: grayscale(0.8);
+   }
+   33% {
+      transform: perspective(150px) rotateX(-180deg) rotateY(0deg) rotateX(0deg);
+   }
+   66% {
+      transform: perspective(150px) rotateX(-180deg) rotateY(-180deg) rotateX(0deg);
+   }
+   100% {
+      transform: perspective(150px) rotateX(-180deg) rotateY(-180deg) rotateX(-180deg);
+      filter: grayscale(0.8);
+   }
+}
+
+@keyframes dots {
+   to {
+      clip-path: inset(0 -34% 0 0);
+   }
+}
+
+@keyframes bars {
+   0% {
+      background-size:
+         20% 100%,
+         20% 100%,
+         20% 100%;
+   }
+   33% {
+      background-size:
+         20% 10%,
+         20% 100%,
+         20% 100%;
+   }
+   50% {
+      background-size:
+         20% 100%,
+         20% 10%,
+         20% 100%;
+   }
+   66% {
+      background-size:
+         20% 100%,
+         20% 100%,
+         20% 10%;
+   }
+   100% {
+      background-size:
+         20% 100%,
+         20% 100%,
+         20% 100%;
+   }
+}
